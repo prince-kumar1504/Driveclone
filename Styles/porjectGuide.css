@@ -1,0 +1,43 @@
+.project-guide-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.404);
+    display: grid;
+    place-content: center;
+    transform: scale(1);
+    transition: all 250ms ease-in-out;
+}
+.project-guide-container.closed{
+   transform: scale(0);
+}
+.guide-box{
+    position: relative;
+    background-color: aliceblue;
+    padding: 0rem 2rem 2rem;
+    border-radius: 1rem;
+}
+.guide-box>hr{
+    border-color: blue;
+}
+.small-heading-htu{
+    padding-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.diff-color-bold{
+    color: crimson;
+    font-weight: normal;
+}
+.close-guide{
+    position: absolute;
+    right: 0;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.htu-title{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}

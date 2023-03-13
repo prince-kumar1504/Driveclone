@@ -1,0 +1,90 @@
+.mini-menu-container {
+    padding-left: .6rem;
+    margin: 0;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    position: relative;
+}
+.three-dots {
+    display: none;
+    /* margin: 0;
+    padding: 0;
+    border: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: transparent; */
+}
+/* .three-dots:hover {
+    background-color: whitesmoke;
+    border-radius: 50%;
+    color: black;
+} */
+.mini-menu {
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    list-style: none;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: flex;
+    border-radius: 6px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    background-color: white;
+    display: none;
+}
+.mini-menu li{
+    color:#0b0c10;
+    font-size: .8rem;
+}
+.mini-menu li:hover{
+    color: crimson;
+    cursor: pointer;
+}
+.icon-menu {
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+.resource-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 2rem 2rem 1rem;
+    gap: 6px;
+}
+.resource-name{
+    box-sizing: border-box;
+    font-size: .80rem;
+    padding: .2rem;
+    text-align: center;
+    background-color: #00000062;
+    color: whitesmoke;
+}
+.r-img{
+    cursor: pointer;
+    height: 90px;
+    width: 80px;
+}
+.resources-container {
+    /* background-color: rgba(0, 0, 0, 0.24); */
+    width: 100vw;
+    margin: auto;
+    height:fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}

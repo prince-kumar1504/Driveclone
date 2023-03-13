@@ -1,0 +1,32 @@
+.bread-crumb-container{
+    pointer-events: none;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    width: 100vw;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    color: whitesmoke;
+    margin: auto;
+    border-bottom: 2px solid #c3c5c7;
+    gap:.25rem;
+    background-color: black;
+    z-index: 1000;
+}
+.bread-crumb-container img{
+    filter: invert(100%);
+}
+.img-path{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+a.path{
+    cursor: pointer;
+}
+.img-path:last-of-type > a{
+    color: rgb(252, 59, 85);
+}

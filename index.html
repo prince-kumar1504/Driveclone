@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            font-family: 'Bree Serif', serif;
+            background-color: #202124;
+            min-height: 100vh;
+        }
+
+        * {
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (max-width:1440px) {
+            * {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            * {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="Styles/album.css">
+    <link rel="stylesheet" href="Styles/breadCrumb.css">
+    <link rel="stylesheet" href="Styles/buttons.css">
+    <link rel="stylesheet" href="Styles/folders.css">
+    <link rel="stylesheet" href="Styles/sidebar.css">
+    <link rel="stylesheet" href="Styles/sreachArea.css">
+    <link rel="stylesheet" href="Styles/textFileEditor.css">
+    <link rel="stylesheet" href="Styles/userInput.css">
+    <link rel="stylesheet" href="Styles/contextMenu.css">
+    <link rel="stylesheet" href="Styles/porjectGuide.css">
+    <link rel="stylesheet" href="Styles/welcome.css">
+</head>
+
+<body>
+
+    <div class="welcome-card-container active" id="welcome-card">
+        <div class="welcome-box">
+            <span class="material-icons close-wel-card" id="close-wel-card">close</span>
+            <div class="welcome-title"><b>Welcome</b>, to a Web-Based OS</div>
+            <li><b class="diff-color-bold"><u>Right click</u></b> to get started</li>
+            <li>For mobile devices <b class="diff-color-bold"><u>long press on screen</u></b> to get started</li>
+            <li>Basic help section can be accessed from <b class="diff-color-bold"><u>bottom left of the screen</u></b></li>
+        </div>
+    </div>
+    <div class="project-guide-container closed" id="htu-container">
+        <div class="guide-box">
+            <span class="material-icons close-guide" id="close-guide-btn">close</span>
+            <div class="htu-title">How to use ?</div>
+            <div class="small-heading-htu">Basic Features</div>
+            <hr>
+            <li>To add new folders, files(text), album(for images) use <b class="diff-color-bold">right click on the screen to open menu</b>.</li>
+            <li>To open a folder/file/album click on it once.</li>
+            <li>To check different features available with folder/file/album, right click on its icon.</li>
+            <li>In Text files, and albums hover over icons to get an idea of what that icon means.</li>
+            <li>Folders can be created in a nested structure. (Folder,files,albums inside other folders).</li>
+            <li>Home button in the bottom bar can be used to navigate to home.</li>
+            <li>List of all the folders/files/albums present can be accessed from by clicking their respective icon in bottom bar.</li>
+            <li>When a folder/file/album is clicked from list of all folders/files/albums view it will take you to its original location then it can be viewed from their.</li>
+            <li>Search bar can be used to search for folder/file/album names and contents of the text files.</li>
+            <li><b class="diff-color-bold">Background can be changed</b> (Access this option from right click menu).</li>
+            <div class="small-heading-htu">Page Layout</div>
+            <hr>
+            <li>Navigation bar on top the page represents the path to the folder.</li>
+            <li>Folder that is currently open has its name highlighted in the top bar.</li>
+            <li>Can go to a previous folder by clicking its name in top navigation bar.</li>
+            <li><b class="diff-color-bold">Right click is disabled on navigation bar at the bottom</b>.</li>
+        </div>
+    </div>
+
+    <div class="pop-up-input">
+        <input type="text" placeholder="Enter name here" id="pop-up-input-content">
+        <div class="pop-up-btns">
+            <button id="pop-up-input-ok">Ok</button>
+            <button id="pop-up-input-cancel">Cancel</button>
+        </div>
+    </div>
+
+    <div class="pop-up-text-app">
+        <div class="text-app-titlebar">
+            <div class="text-app-title">Title here</div>
+            <div class="text-app-close-btn">&times;</div>
+        </div>
+        <hr>
+        <div class="text-app-menubar">
+            <span class="text-app-menu-item material-icons " action="bold" title="Bold Text">format_bold</span>
+            <span class="text-app-menu-item material-icons " action="underline" title="Underline Text">format_underline</span>
+            <span class="text-app-menu-item material-icons " action="save" title="Save">save</span>
+            <span class="text-app-menu-item material-icons " action="italic" title="Italicise text">format_italic</span>
+            <input class="text-app-menu-item" type="color" purpose="bg-color" title="Change Background Color">
+            <input class="text-app-menu-item" type="color" purpose="fg-color" title="Change Text Color">
+            <select class="text-app-menu-item" purpose="font-family" title="Change Font Family">
+                <option value="monospace">monospace</option>
+                <option value="serif">serif</option>
+                <option value="sans-serif">sans-serif</option>
+                <option value="cursive">cursive</option>
+            </select>
+            <select class="text-app-menu-item" purpose="font-size" title="Change Font Size">
+                <option value="10pt">10</option>
+                <option value="12pt">12</option>
+                <option value="14pt">14</option>
+                <option value="16pt">16</option>
+                <option value="18pt">18</option>
+                <option value="20pt">20</option>
+                <option value="22pt">22</option>
+                <option value="24pt">24</option>
+                <option value="26pt">26</option>
+                <option value="28pt">28</option>
+            </select>
+            <input class="text-app-menu-item" type="color" purpose="file-color" title="Change File Color">
+            <span class="text-app-menu-item material-icons " action="download" title="Download File">file_download</span>
+            <span class="warning-text">Unsaved data will be lost. Please save before closing.</li>
+        </div>
+        <hr>
+        <div class="text-app-textarea-container">
+            <textarea class="text-app-textarea"></textarea>
+        </div>
+    </div>
+
+    <div class="pop-up-album-app">
+        <div class="album-app-titlebar">
+            <div class="album-app-title">Title here</div>
+            <div class="album-app-close-btn">&times;</div>
+        </div>
+        <hr>
+        <div class="album-app-menubar">
+            <span class="album-app-menu-item material-icons" action="upload-img" title="Upload image from system">upload</span>
+            <input type="file" id="uploadImgActual" style="display: none;" accept="image/*">
+            <span class="album-app-menu-item material-icons" action="download-img" title="Download image">download</span>
+            <span class="album-app-menu-item material-icons" action="add-img" title="Add image using url">add_photo_alternate</span>
+            <span class="album-app-menu-item material-icons" action="nav-left" title="Previous image">arrow_back_ios_new</span>
+            <span class="album-app-menu-item material-icons" action="play" title="Start slideshow">play_arrow</span>
+            <span class="album-app-menu-item material-icons" action="nav-right" title="Next image">arrow_forward_ios</span>
+            <span class="album-app-menu-item material-icons" action="delete" title="Delete image">delete</span>
+        </div>
+        <hr>
+        <div class="album-app-image-container">
+            <div class="album-app-navigate-left-container" btn="left"><span class="nav-arrow material-icons" title="Previous image">arrow_back_ios_new</span></div>
+            <div class="album-app-image-area">
+                <img src="" alt="" id="album-main-img">
+            </div>
+            <div class="album-app-navigate-right-container" btn="right"><span class="nav-arrow material-icons" title="Next image">arrow_forward_ios</span></div>
+        </div>
+        <div class="album-app-images">
+            <template class="image-thumbnails">
+                <div class="album-app-thumbnail">
+                    <img src="">
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div id="overlay" class=""></div>
+
+    <div class="sidebar-btn"><span class="material-icons">menu</span></div>
+    <div class="sidebar-container">
+        <div class="project-name-container">
+            <div class="project-name">File Management Sys</div>
+        </div>
+        <hr>
+        <div class="resource-type-list">
+            <div class="resource-list-item root-list" id="home-btn">Home</div>
+            <div class="resource-list-item folder-list" id="folder-btn"><span class="material-icons">folder</span>Folders</div>
+            <div class="resource-list-item file-list" id="file-btn"><span class="material-icons">description</span>Text Files</div>
+            <div class="resource-list-item album-list" id="album-btn"><span class="material-icons">photo_library</span>Albums</div>
+        </div>
+    </div>
+
+    <div class="search-bar-container">
+        <div><span class="material-icons info-btn" id="open-guide-btn">info</span></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search here" id="search-input">
+            <span class="material-icons mi-bar mi-search" id="search">search</span>
+            <span class="material-icons mi-bar mi-home" id="home-bar-btn" title="Home">home</span>
+            <span class="material-icons mi-bar mi-folder" id="folder-bar-btn" title="Show all folders">folder</span>
+            <span class="material-icons mi-bar mi-file" id="file-bar-btn" title="Show all files">description</span>
+            <span class="material-icons mi-bar mi-album" id="album-bar-btn" title="Show all albums">photo_library</span>
+        </div>
+        <div class="time-date" id="set-time"></div>
+    </div>
+    <hr>
+
+    <div class="buttons-container">
+        <button class="main-btns" id="add-folder">Add Folder</button>
+        <button class="main-btns" id="add-file">Add File</button>
+        <button class="main-btns" id="add-album">Add Album</button>
+    </div>
+
+    <div class="bread-crumb-container">
+        <a class="path">Home</a>
+    </div>
+
+
+    <div class="resources-container">
+    </div>
+
+    <div id="main-context-menu">
+        <div id="cm-add-folder" class="item-c-mm">Add new Folder</div>
+        <div id="cm-add-file" class="item-c-mm">Add new File</div>
+        <div id="cm-add-album" class="item-c-mm">Add new Album</div>
+        <input id="hidden-upload-btn" class="hidden-input" type="file" accept="image/*">
+        <hr>
+        <div id="cm-change-bg" class="item-c-mm">Change background</div>
+        <div id="cm-reset-bg" class="item-c-mm">Reset Background</div>
+    </div>
+
+    <template class="resources-template">
+        <div class="resource-box">
+            <div class="icon-menu">
+                <img src="Images/test_file_image.jpg" class="r-img" action="set-img-src">
+                <div class="mini-menu-container">
+                    <button class="three-dots">&#10247</button>
+                    <ul class="mini-menu">
+                        <li action="view">View</li>
+                        <li action="delete">Delete</li>
+                        <li action="rename">Rename</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resource-name" action="set-name"></div>
+        </div>
+    </template>
+
+
+    <template class="breadcrumb-template">
+        <div class="img-path">
+            <img src="Images/right-arrow-icon.png" style="height: 20px;">
+            <a class="path"></a>
+        </div>
+    </template>
+    <script src="./guide.js"></script>
+    <script src="./resourcesSys.js"></script>
+    <script src="./textApp.js"></script>
+    <script src="./albumApp.js"></script>
+    <script src="./sidebar.js"></script>
+    <script src="./searchbar.js"></script>
+
+</body>
+
+</html>
